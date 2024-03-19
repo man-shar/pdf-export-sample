@@ -1,1 +1,1 @@
-# pdfkit + svg-to-pdfkit sample
+# pdfmake + svg-to-pdfkit sample
