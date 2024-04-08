@@ -1,6 +1,7 @@
 import fs from "fs";
 
-const vfsBefore = "this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = ";
+const vfsBefore =
+  "window.pdfMake = window.pdfMake || {}; window.pdfMake.vfs = ";
 const vfsAfter = ";";
 const sourcePath = process.argv[2];
 const vfsFilename = process.argv[3] ? process.argv[3] : "./build/vfs_fonts.js";

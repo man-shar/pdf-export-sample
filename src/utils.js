@@ -3,11 +3,13 @@ import { createPdf } from "pdfmake";
 
 import "./vfs_fonts";
 
-console.log(createPdf);
-
 var fonts = {
   Inter: {
     normal: "Inter-regular.ttf",
+  },
+  Playfair: {
+    italic: "Playfair-Italic-VariableFont_opsz,wdth,wght.ttf",
+    normal: "Playfair-VariableFont_opsz,wdth,wght.ttf",
   },
 };
 
@@ -27,18 +29,18 @@ export function createPDF(chartCtr) {
   const subtitle = chartCtr.querySelector(".subtitle");
 
   // get the svg, headline and subtitles' x and y client rects relative to the chartCtr
-  const svgRect = svg.getBoundingClientRect();
-  const titleRect = title.getBoundingClientRect();
-  const subtitleRect = subtitle.getBoundingClientRect();
-  const chartRect = chartCtr.getBoundingClientRect();
+  // const svgRect = svg.getBoundingClientRect();
+  // const titleRect = title.getBoundingClientRect();
+  // const subtitleRect = subtitle.getBoundingClientRect();
+  // const chartRect = chartCtr.getBoundingClientRect();
 
-  // get the svg, headline and subtitles' x and y client rects relative to the chartCtr
-  const svgX = svgRect.x - chartRect.x + pageMargin.left;
-  const svgY = svgRect.y - chartRect.y + pageMargin.top;
-  const titleX = titleRect.x - chartRect.x + pageMargin.left;
-  const titleY = titleRect.y - chartRect.y + pageMargin.top;
-  const subtitleX = subtitleRect.x - chartRect.x + pageMargin.left;
-  const subtitleY = subtitleRect.y - chartRect.y + pageMargin.top;
+  // // get the svg, headline and subtitles' x and y client rects relative to the chartCtr
+  // const svgX = svgRect.x - chartRect.x + pageMargin.left;
+  // const svgY = svgRect.y - chartRect.y + pageMargin.top;
+  // const titleX = titleRect.x - chartRect.x + pageMargin.left;
+  // const titleY = titleRect.y - chartRect.y + pageMargin.top;
+  // const subtitleX = subtitleRect.x - chartRect.x + pageMargin.left;
+  // const subtitleY = subtitleRect.y - chartRect.y + pageMargin.top;
 
   //   get font sizes computed
   const titleFontSize = +window
@@ -70,7 +72,7 @@ export function createPDF(chartCtr) {
     ],
     styles: {
       header: {
-        font: "Inter",
+        font: "Playfair",
         fontSize: titleFontSize,
       },
       subheader: {
